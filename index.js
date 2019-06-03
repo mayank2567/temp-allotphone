@@ -13,7 +13,7 @@ let allot = (req, res) => {
         let phoneNum = getRandomInt(1111111111,9999999999);
         res.send(`Random Phone number is ${phoneNum}`);
         db.push('/'+phoneNum,"1");
-    } else if (req.query.phone < 1111111111){
+    } else if (req.query.phone < 1111111111 || req.query.phone > 9999999999){
         res.send(`Invalid Phone number ${req.query.phone}`);
     }
     else{
